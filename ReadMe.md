@@ -1,4 +1,4 @@
-# STUDENT NAME  Shader Practice
+# Seohyeon Min  Shader Practice
 
 
 [Hello Color](draw.html?shader=00_color.frag)<p>
