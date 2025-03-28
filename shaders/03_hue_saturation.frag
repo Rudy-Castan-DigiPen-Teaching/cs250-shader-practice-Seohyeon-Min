@@ -1,6 +1,5 @@
-#ifdef GL_ES
+#version 300 es
 precision mediump float;
-#endif
 
 
 /**
@@ -13,6 +12,8 @@ precision mediump float;
 
 
 #define TWO_PI 6.28318530718
+
+out vec4 FragColor;
 
 uniform vec2 u_resolution;
 uniform float u_time;
@@ -36,5 +37,5 @@ void main(){
 
     color = hsb2rgb(vec3((angle/TWO_PI)+0.5,radius+ sin(u_time * 9.),1.0 ));
 
-    gl_FragColor = vec4(color,1.0);
+    FragColor = vec4(color,1.0);
 }

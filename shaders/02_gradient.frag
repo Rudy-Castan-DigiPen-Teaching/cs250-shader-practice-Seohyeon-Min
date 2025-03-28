@@ -1,8 +1,19 @@
-#ifdef GL_ES
+#version 300 es
 precision mediump float;
-#endif
+
+
+/**
+ * \file
+ * \author Seohyeon Min
+ * \date 2025 Spring
+ * \par CS250 Computer Graphics II
+ * \copyright DigiPen Institute of Technology
+ */
+
 
 #define PI 3.14159265359
+
+out vec4 FragColor;
 
 uniform vec2 u_resolution;
 uniform vec2 u_mouse;
@@ -35,5 +46,5 @@ void main() {
     color = mix(color,vec3(0.0,1.0,0.0),plot(st,pct.g));
     color = mix(color,vec3(0.0,0.0,1.0),plot(st,pct.b));
 
-    gl_FragColor = vec4(color,1.0);
+    FragColor = vec4(color,1.0);
 }
