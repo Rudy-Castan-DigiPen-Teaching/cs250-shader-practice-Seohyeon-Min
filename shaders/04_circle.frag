@@ -58,17 +58,17 @@ uniform float u_time;
  {
     vec2 position = to_coord(gl_FragCoord.xy);
     vec3 color = vec3(1);
-    const int LOOP_COUNT = 24;
+    const int LOOP_COUNT = 44;
     for (int i = 0; i < LOOP_COUNT; ++i) 
     {
-        float dist2 = 0.25 + float(i) * 0.4;
-        float x = 2. + float(i) * 0.1;
-        vec2 p = vec2(cos(u_time + x), sin(u_time - x * 0.6))*dist2 / float(LOOP_COUNT)+ vec2(0.5);
+        float dist2 = 0.25 + float(i) * 0.2;
+        float x = 2. + float(i) * 0.02;
+        vec2 p = vec2(cos(u_time + x) * 2., sin(u_time - x * 8.6))* dist2  / float(LOOP_COUNT)+ vec2(0.5);
 
-        float size = 0.10 + float(i) * -0.01;
+        float size = 0.10 + float(i) * -0.005;
         float t = circle(position, p, size);
     
-        color = mix(color, vec3(1) - vec3(float(i)*0.05), t);
+        color = mix(color, vec3(1) - vec3(float(i)*0.042), t);
     }
 
     FragColor = vec4(color, 1.0);
